@@ -1,0 +1,31 @@
+-- Create a Dispensary store database 
+
+CREATE TABLE Cannabis (id INTEGER PRIMARY KEY, Category TEXT, Name TEXT, Strain TEXT, Price INTEGER);
+
+INSERT INTO Cannabis VALUES (1, "Flower", "Big Head", "Indica", 35);
+INSERT INTO Cannabis VALUES (2, "Flower", "Bazookas", "Sativa", 37.5);
+INSERT INTO Cannabis VALUES (3, "Flower", "Blue Cheese", "Indica", 42.50);
+INSERT INTO Cannabis VALUES (4, "Flower", "Ghost OG", "Indica", 35);
+INSERT INTO Cannabis VALUES (5, "Flower", "Hot Ice", "Hybrid", 30);
+INSERT INTO Cannabis VALUES (6, "Vape", "Blue Dream", "Hybrid", 26);
+INSERT INTO Cannabis VALUES (7, "Vape", "G6", "Sativa", 50);
+INSERT INTO Cannabis VALUES (8, "Vape", "Forbidden Fruit", "Indica", 55);
+INSERT INTO Cannabis VALUES (9, "Vape", "Mimosa", "Sativa", 50);
+INSERT INTO Cannabis VALUES (10, "Vape", "Northen Lights", "Hybrid", 35);
+INSERT INTO Cannabis VALUES (11, "Edible", "Sparkling Orange", "Sativa", 26); 
+INSERT INTO Cannabis VALUES (12, "Edible", "Pineapple Basil", "Hybrid", 20);
+INSERT INTO Cannabis VALUES (13, "Edible", "Midnight Blueberry","Indica", 30);
+INSERT INTO Cannabis VALUES (14, "Edible", "Wild Berry", "Indica", 67.50);
+INSERT INTO Cannabis VALUES (15, "Edible", "Pineapple Habanero", "Sativa", 30);
+
+--display the database ordered by price.
+SELECT Price FROM Cannabis
+ORDER BY Price ASC;
+
+--what is the most expensive price for edibles? 
+SELECT MAX(price) AS Most_Expensive_Edible FROM Cannabis
+WHERE Category="Edible";
+
+--what is the avg price of items labeled indica?
+SELECT AVG(price) AS "avg indica item price" FROM Cannabis
+WHERE Strain="Indica";
