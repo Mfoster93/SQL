@@ -1,5 +1,3 @@
--- Create a Dispensary store database 
-
 CREATE TABLE Cannabis (id INTEGER PRIMARY KEY, Category TEXT, Name TEXT, Strain TEXT, Price INTEGER);
 
 INSERT INTO Cannabis VALUES (1, "Flower", "Big Head", "Indica", 35);
